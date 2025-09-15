@@ -10,7 +10,7 @@
 </p>
 
 
-⚡ **Enterprise-grade end-to-end data engineering project** that processes real-time and historical stock market data. Built with **Kafka, Spark, Airflow, MinIO, Snowflake, and Docker**, it demonstrates modern streaming + batch architectures. The pipeline ingests, transforms, and loads data into a **cloud warehouse** for analytics and reporting. Includes **scalable orchestration, fault tolerance, and data quality checks**, making it **production-ready and portfolio-worthy**.
+**Enterprise-grade end-to-end data engineering project** for processing **real-time and historical stock market data**. Built with **Kafka, Spark, Airflow, MinIO, Snowflake, and Docker**, it demonstrates **modern streaming and batch architectures by ingesting, transforming, and loading data into a cloud warehouse with scalable orchestration, fault tolerance, and data quality checks**.
 
 ![Architecture Overview](./images/Architecture_Diagram.jpeg)
 
@@ -355,7 +355,8 @@ docker exec -it airflow-webserver airflow dags trigger stock_market_batch_pipeli
 
 **Automatic Execution:**
 ```bash
-# Streaming DAG runs on schedule (every 30 minutes default)
+# The streaming pipeline ingests data continuously at 2-second intervals.
+# The Airflow DAG runs every 30 minutes for health checks, compaction, and Snowflake micro-loads.
 # Monitor in Airflow UI under 'stock_streaming_pipeline'
 ```
 
@@ -923,6 +924,7 @@ This project serves as both a learning resource and a production-ready template 
 ---
 
 *Built with ❤️ for the data engineering community. This project demonstrates how modern data technologies can be combined to create robust, scalable analytics platforms for financial data processing.*
+
 
 
 
