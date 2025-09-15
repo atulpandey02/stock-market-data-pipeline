@@ -751,6 +751,11 @@ def test_no_duplicate_records():
 
 ## Future Improvements / Roadmap
 
+This project has significant potential for expansion into production-grade enterprise systems and advanced analytics capabilities.
+
+<details>
+<summary><strong>Click to view detailed roadmap</strong></summary>
+
 ### Short-term Enhancements (Next 3 months):
 
 **Monitoring & Alerting:**
@@ -824,20 +829,9 @@ def test_no_duplicate_records():
 - Graph analytics for market correlation analysis
 - Real-time ESG scoring and sustainable investing metrics
 - Integration with blockchain and DeFi protocols
-
+  
+</details>
 ---
-
-## Contributing
-
-We welcome contributions from the data engineering and financial analytics community! This project aims to demonstrate best practices while remaining accessible for learning and improvement.
-
-### How to Contribute:
-
-**Getting Started:**
-1. Fork the repository and create a feature branch
-2. Set up the development environment following the installation guide
-3. Review open issues and project roadmap for contribution opportunities
-4. Join our discussions in GitHub Issues for questions and ideas
 
 **Development Workflow:**
 ```bash
@@ -930,6 +924,7 @@ This project serves as both a learning resource and a production-ready template 
 ---
 
 *Built with ❤️ for the data engineering community. This project demonstrates how modern data technologies can be combined to create robust, scalable analytics platforms for financial data processing.*
+
 
 
 
