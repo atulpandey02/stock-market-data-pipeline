@@ -1,5 +1,15 @@
 # Stock Market Data Pipeline
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=flat&logo=apache-kafka&logoColor=white" alt="Kafka"/>
+  <img src="https://img.shields.io/badge/Apache%20Spark-E25A1C?style=flat&logo=apache-spark&logoColor=white" alt="Spark"/>
+  <img src="https://img.shields.io/badge/Apache%20Airflow-017CEE?style=flat&logo=apache-airflow&logoColor=white" alt="Airflow"/>
+  <img src="https://img.shields.io/badge/MinIO-C72E49?style=flat&logo=minio&logoColor=white" alt="MinIO"/>
+  <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=flat&logo=snowflake&logoColor=white" alt="Snowflake"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" alt="Docker"/>
+</p>
+
+
 ⚡ **Enterprise-grade end-to-end data engineering project** that processes real-time and historical stock market data. Built with **Kafka, Spark, Airflow, MinIO, Snowflake, and Docker**, it demonstrates modern streaming + batch architectures. The pipeline ingests, transforms, and loads data into a **cloud warehouse** for analytics and reporting. Includes **scalable orchestration, fault tolerance, and data quality checks**, making it **production-ready and portfolio-worthy**.
 
 ![Architecture Overview](./images/Architecture_Diagram.jpeg)
@@ -83,7 +93,7 @@ The pipeline implements a **Lambda Architecture** pattern, handling both batch a
 
 **Message Streaming:**
 - **Apache Kafka** manages two primary topics:
-  - `stock-market-realtime`: Handles live market data with 30-second intervals
+  - `stock-market-realtime`: Handles live market data with 2-second intervals
   - `stock-market-batch`: Processes historical data for bulk ingestion
 - **ZooKeeper** coordinates Kafka cluster operations and maintains topic metadata
 
@@ -162,7 +172,7 @@ The pipeline implements a **Lambda Architecture** pattern, handling both batch a
 ## Features
 
 ### Data Ingestion Capabilities:
-- **Real-time Stock Data Streaming**: Live market data with 30-second intervals
+- **Real-time Stock Data Streaming**: Live market data with 2-second intervals
 - **Historical Data Batch Processing**: Complete historical datasets (1+ years)
 - **Multi-source Data Integration**: Yahoo Finance and Alpha Vantage APIs
 - **Fault-tolerant Kafka Integration**: Guaranteed message delivery with consumer groups
@@ -587,14 +597,6 @@ stockmarketdatapipeline/
 ![Streaming Pipeline](./images/stream_dag_workflow.png)
 *Real-time streaming pipeline with custom sensors and cleanup*
 
-### Spark Processing Dashboard
-![Spark UI](./images/spark_processing_ui.png)
-*Spark Structured Streaming job processing real-time market data*
-
-### MinIO Data Lake Organization
-![MinIO Console](./images/minio_data_structure.png)
-*Hierarchical data organization in MinIO object storage*
-
 ### Sample Data Output
 
 **Real-time Analytics Table (Snowflake):**
@@ -885,38 +887,6 @@ git push origin feature/your-feature-name
 3. Maintainers will provide feedback within 48 hours
 4. Breaking changes require discussion in GitHub Issues first
 
-### Community Standards:
-
-**Communication:**
-- Be respectful and inclusive in all interactions
-- Use clear, descriptive language in issues and PRs
-- Help others learn by explaining your technical decisions
-- Share knowledge and best practices from your experience
-
-**Technical Standards:**
-- Prioritize security and data privacy in all implementations
-- Follow infrastructure-as-code principles for reproducible deployments
-- Maintain backward compatibility when possible
-- Document all configuration changes and deployment procedures
-
-### Recognition:
-
-**Contributors will be recognized through:**
-- GitHub contributor acknowledgments
-- Documentation credits for significant improvements
-- Feature attribution in release notes
-- Invitation to join the core maintainer team for consistent contributors
-
----
-
-## License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-**Quick Summary:** ✅ Commercial use, modification, and distribution allowed | ❌ No warranty provided
-
-**Important:** For production deployments, ensure compliance with third-party licenses (Apache 2.0 for Kafka/Spark/Airflow, AGPLv3 for MinIO). See [LICENSE](LICENSE) for complete details.
-
 ---
 
 ## Acknowledgements
@@ -959,26 +929,6 @@ This project serves as both a learning resource and a production-ready template 
 
 ---
 
-## Support & Community
-
-### Getting Help:
-- **GitHub Issues**: For bug reports and feature requests
-- **GitHub Discussions**: For questions and community support
-- **Documentation**: Comprehensive setup and troubleshooting guides
-- **Wiki**: Community-contributed tips and advanced configurations
-
-### Staying Updated:
-- **Star this repository** to receive notifications about updates
-- **Watch releases** for new features and bug fixes
-- **Follow the roadmap** for upcoming enhancements
-- **Join discussions** to influence future development
-
-### Contact:
-- **Project Maintainer**: [Your Name] - [your.email@domain.com]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **Twitter**: [@yourusername] for project updates and data engineering insights
-
----
-
 *Built with ❤️ for the data engineering community. This project demonstrates how modern data technologies can be combined to create robust, scalable analytics platforms for financial data processing.*
+
 
