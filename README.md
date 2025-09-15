@@ -831,7 +831,6 @@ This project has significant potential for expansion into production-grade enter
 - Integration with blockchain and DeFi protocols
   
 </details>
----
 
 **Development Workflow:**
 ```bash
@@ -852,7 +851,7 @@ git commit -m "Add real-time anomaly detection feature"
 # Push and create pull request
 git push origin feature/your-feature-name
 ```
-
+---
 **Contribution Guidelines:**
 
 **Code Quality Standards:**
@@ -924,6 +923,7 @@ This project serves as both a learning resource and a production-ready template 
 ---
 
 *Built with ❤️ for the data engineering community. This project demonstrates how modern data technologies can be combined to create robust, scalable analytics platforms for financial data processing.*
+
 
 
 
