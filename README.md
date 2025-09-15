@@ -72,8 +72,6 @@ This project addresses these challenges by implementing a modern data architectu
 
 ## Architecture
 
-![Architecture Diagram](./images/architecture.png)
-
 The pipeline implements a **Lambda Architecture** pattern, handling both batch and streaming data paths:
 
 ### Core Components Integration:
@@ -983,3 +981,4 @@ This project serves as both a learning resource and a production-ready template 
 ---
 
 *Built with ❤️ for the data engineering community. This project demonstrates how modern data technologies can be combined to create robust, scalable analytics platforms for financial data processing.*
+
