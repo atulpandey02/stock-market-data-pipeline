@@ -1,5 +1,18 @@
 # Stock Market Data Pipeline
-Enterprise-grade real-time and batch analytics platform for stock market data processing, transformation, and analysis.
+
+⚡ **Enterprise-grade end-to-end data engineering project** that processes real-time and historical stock market data. Built with **Kafka, Spark, Airflow, MinIO, Snowflake, and Docker**, it demonstrates modern streaming + batch architectures. The pipeline ingests, transforms, and loads data into a **cloud warehouse** for analytics and reporting. Includes **scalable orchestration, fault tolerance, and data quality checks**, making it **production-ready and portfolio-worthy**.
+
+![Architecture Overview](./images/Architecture_Diagram.jpeg)
+
+## 🚀 Quick Start
+```bash
+git clone https://github.com/your-username/stock-market-data-pipeline.git
+cd stock-market-data-pipeline
+docker-compose up -d
+```
+**Access Points:** Airflow UI (localhost:8080) | MinIO Console (localhost:9001) | Kafka UI (localhost:8081)
+
+For detailed setup instructions, see [Setup / Installation](#setup--installation).
 
 ---
 
@@ -59,7 +72,7 @@ This project addresses these challenges by implementing a modern data architectu
 
 ## Architecture
 
-![Architecture Diagram](./images/Architecture_Diagram.jpeg)
+![Architecture Diagram](./images/architecture.png)
 
 The pipeline implements a **Lambda Architecture** pattern, handling both batch and streaming data paths:
 
@@ -192,27 +205,35 @@ The pipeline implements a **Lambda Architecture** pattern, handling both batch a
 - **Docker** (version 20.10+) and **Docker Compose** (version 2.0+)
 - **Python 3.9+** for local development
 - **Snowflake Account** with warehouse access (optional for full pipeline)
-- **Minimum System Requirements**:
-  - 8GB RAM (16GB recommended)
-  - 4 CPU cores
-  - 20GB available disk space
+- **Minimum System Requirements**: 8GB RAM, 4 CPU cores, 20GB disk space
 
-### Environment Configuration:
+### Quick Setup:
 
-1. **Clone the Repository:**
 ```bash
+# 1. Clone and navigate
 git clone https://github.com/your-username/stock-market-data-pipeline.git
 cd stock-market-data-pipeline
-```
 
-2. **Environment Variables Setup:**
-```bash
-# Copy the example environment file
+# 2. Configure environment (edit as needed)
 cp .env.example .env
 
-# Edit the .env file with your configurations
-nano .env
+# 3. Start all services
+docker-compose up -d
+
+# 4. Verify services
+docker-compose ps
 ```
+
+**Service URLs:**
+- **Airflow UI**: http://localhost:8080 (admin/admin)
+- **MinIO Console**: http://localhost:9001 (minioadmin/minioadmin)
+- **Kafka UI**: http://localhost:8081
+- **Spark Master UI**: http://localhost:4040
+
+### Detailed Configuration:
+
+<details>
+<summary>Click to expand full setup instructions</summary>
 
 **Required Environment Variables:**
 ```bash
@@ -277,6 +298,8 @@ docker exec -it kafka kafka-topics --list --bootstrap-server localhost:9092
 curl -X GET "http://localhost:8080/api/v1/dags" \
   -u "admin:admin"
 ```
+
+</details>
 
 ---
 
@@ -556,12 +579,23 @@ stockmarketdatapipeline/
 ## Examples / Screenshots
 
 ### Architecture Overview
-![System Architecture](./images/architecture.png)
+![System Architecture](./images/Architecture_Diagram.jpeg)
 *Complete system architecture showing data flow from sources to analytics*
 
 ### Airflow DAG Visualization
-![Airflow DAG](./images/workflow.png)
-*Batch and streaming pipeline workflows in Airflow*
+![Batch Pipeline](./images/batch_dag_workflow.png)
+*Batch processing workflow orchestrated by Airflow*
+
+![Streaming Pipeline](./images/stream_dag_workflow.png)
+*Real-time streaming pipeline with custom sensors and cleanup*
+
+### Spark Processing Dashboard
+![Spark UI](./images/spark_processing_ui.png)
+*Spark Structured Streaming job processing real-time market data*
+
+### MinIO Data Lake Organization
+![MinIO Console](./images/minio_data_structure.png)
+*Hierarchical data organization in MinIO object storage*
 
 ### Sample Data Output
 
@@ -881,22 +915,9 @@ git push origin feature/your-feature-name
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-### License Summary:
-- ✅ Commercial use permitted
-- ✅ Modification and distribution allowed
-- ✅ Private use encouraged
-- ✅ Patent use granted
-- ❌ No warranty or liability provided
-- ❌ No trademark use granted
+**Quick Summary:** ✅ Commercial use, modification, and distribution allowed | ❌ No warranty provided
 
-### Third-Party Licenses:
-- Apache Kafka: Apache License 2.0
-- Apache Spark: Apache License 2.0
-- Apache Airflow: Apache License 2.0
-- MinIO: GNU AGPLv3 (for open-source deployment)
-- Docker: Apache License 2.0
-
-**For commercial deployments**, ensure compliance with all third-party license requirements, particularly MinIO's AGPLv3 license for production use.
+**Important:** For production deployments, ensure compliance with third-party licenses (Apache 2.0 for Kafka/Spark/Airflow, AGPLv3 for MinIO). See [LICENSE](LICENSE) for complete details.
 
 ---
 
@@ -962,4 +983,3 @@ This project serves as both a learning resource and a production-ready template 
 ---
 
 *Built with ❤️ for the data engineering community. This project demonstrates how modern data technologies can be combined to create robust, scalable analytics platforms for financial data processing.*
-
